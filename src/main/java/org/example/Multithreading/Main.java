@@ -12,6 +12,8 @@ public class Main {
         List<Integer> listToSort = List.of(1, 5, 4, 3, 2, 8, 7, 6);
         ExecutorService executorService = Executors.newCachedThreadPool();
 
+
+        listToSort.stream().forEach(System.out::println);
         MergeSorter mergeSorter = new MergeSorter(listToSort, executorService);
 
 
