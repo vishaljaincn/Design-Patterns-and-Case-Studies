@@ -1,4 +1,4 @@
-package org.example.designpatterns.Flyweight;
+package org.example.designpatterns.flyweight;
 
 /**
  * Represents a user in a chess game.

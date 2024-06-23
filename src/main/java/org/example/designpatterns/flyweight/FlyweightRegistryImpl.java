@@ -1,4 +1,4 @@
-package org.example.designpatterns.Flyweight;
+package org.example.designpatterns.flyweight;
 
 import java.util.HashMap;
 import java.util.Map;

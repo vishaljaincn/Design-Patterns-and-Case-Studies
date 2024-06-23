@@ -1,4 +1,4 @@
-package org.example.designpatterns.Flyweight;
+package org.example.designpatterns.flyweight;
 
 /**
  * Interface for a registry that manages Flyweight objects.

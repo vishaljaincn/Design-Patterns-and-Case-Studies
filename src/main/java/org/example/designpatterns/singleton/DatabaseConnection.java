@@ -8,8 +8,8 @@ package org.example.designpatterns.singleton;
 public class DatabaseConnection {
     // Static variable to hold the single instance of the DatabaseConnection
     // It is initially set to null and will be instantiated when needed.
-    // public static DatabaseConnection dbc = new DatabaseConnection();
-    public static DatabaseConnection dbc = null;
+    // The volatile keyword ensures that multiple threads handle the instance correctly
+    private static volatile DatabaseConnection dbc = null;
 
     // Database connection details
     String url;

@@ -1,4 +1,5 @@
-package org.example.designpatterns.Flyweight;
+
+package org.example.designpatterns.flyweight;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,12 +7,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation to indicate intrinsic state in the Flyweight design pattern.
- * Intrinsic state is the part of the state that is shared between different Flyweight objects.
+ * Annotation to indicate extrinsic state in the Flyweight design pattern.
+ * Extrinsic state is the part of the state that can be passed from the client
+ * to the Flyweight object and is not shared.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface IntrinsicState {
+public @interface ExtrinsicState {
 }
 
 /*
@@ -22,6 +24,6 @@ public @interface IntrinsicState {
     - `@Target(ElementType.TYPE)`: This indicates that the annotation can be applied to types, which includes
       classes, interfaces, enums, and annotations.
 
-    - `public @interface IntrinsicState`: This defines a custom annotation named `IntrinsicState`.
-      This annotation can be used to mark classes that contain intrinsic state in the Flyweight design pattern.
+    - `public @interface ExtrinsicState`: This defines a custom annotation named `ExtrinsicState`.
+      This annotation can be used to mark classes that contain extrinsic state in the Flyweight design pattern.
 */

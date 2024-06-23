@@ -1,4 +1,4 @@
-package org.example.designpatterns.Flyweight;
+package org.example.designpatterns.flyweight;
 
 /**
  * Represents the extrinsic state of a user in the Flyweight design pattern.
