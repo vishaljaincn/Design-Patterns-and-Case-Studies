@@ -1,5 +1,7 @@
 package org.example.Strings;
 
+import java.lang.ref.WeakReference;
+
 public class StringDemo {
     public static void main(String[] args) {
         String s1 = "Scaler";
@@ -13,5 +15,7 @@ public class StringDemo {
         System.out.println((s2 == s4) + " " + (s2.equals(s4))); // F T
         System.out.println((s4 == s5) + " " + (s4.equals(s5))); // F T
         System.out.println("DEBUG");
+
+        WeakReference<StringDemo> weakReference=new WeakReference<>(new StringDemo());
     }
 }
