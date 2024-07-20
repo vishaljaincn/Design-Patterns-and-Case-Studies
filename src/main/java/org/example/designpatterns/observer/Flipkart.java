@@ -49,6 +49,7 @@ public class Flipkart {
      */
     void unRegisterSubscriber(OnOrderPlacedSubscriber onOrderPlacedSubscriber) {
         onOrderPlacedSubscribers.remove(onOrderPlacedSubscriber);
+     
     }
 
     /**

@@ -1,4 +1,4 @@
-package org.example.Multithreading;
+package org.example.MergeSort_Callable;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
