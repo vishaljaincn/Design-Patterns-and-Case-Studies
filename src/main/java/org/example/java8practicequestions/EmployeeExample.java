@@ -92,7 +92,7 @@ public class EmployeeExample {
 
         // Grouping integers by value and counting the occurrences of each integer
         Map<Integer, Long> numcountMap = list2.stream()
-                .collect(Collectors.groupingBy(Integer::valueOf, Collectors.counting()));
+                .collect(Collectors.groupingBy(i -> i, Collectors.counting()));
         System.out.println(numcountMap); // Output: {1=2, 2=3, 3=2, 4=1, 5=1, 6=1}
 
         // Creating another list of integers

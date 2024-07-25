@@ -11,7 +11,7 @@ public class NumberSum {
         // Q1: How can you find the sum of even numbers in a list using Java Streams?
         int sumOfEvens = numbers.stream()
                 .filter(num -> num % 2 == 0)
-                .mapToInt(Integer::intValue)
+                .mapToInt(i -> i)
                 .sum();
         System.out.println("Sum of even numbers: " + sumOfEvens);
         System.out.println("----------------------------------------------------------------");
@@ -26,7 +26,7 @@ public class NumberSum {
         // Q3: How can you find the sum of odd numbers in a list?
         int sumOfOdds = numbers.stream()
                 .filter(num -> num % 2 != 0)
-                .mapToInt(Integer::intValue)
+                .mapToInt(i -> i)
                 .sum();
         System.out.println("Sum of odd numbers: " + sumOfOdds);
         System.out.println("----------------------------------------------------------------");

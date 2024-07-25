@@ -5,8 +5,34 @@ import java.util.stream.Stream;
 
 class Employee12 {
     public int id;
+
+
     public String name;
     public int salary;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 
     public Employee12(int a, String b, int c) {
         this.id = a;
@@ -27,10 +53,24 @@ class Stream1 {
 
         // Question: Sort the employees first by salary and then by name if salaries are equal
         List<Employee12> empList = al.stream()
-                .sorted(Comparator.comparingInt((Employee12 i) -> i.salary).thenComparing(i -> i.name))
+                .sorted(Comparator.comparing(Employee12::getSalary).thenComparing(Employee12::getName))
                 .toList();
 
         empList.forEach(i -> System.out.println(i.name + "     " + i.salary));
+
+        // Question: Sort the employees first by salary and then by name if salaries are equal without
+        // Comparator.comparing
+        List<Employee12> empList1 = al.stream()
+                .sorted((e1, e2) -> {
+                    int salaryComparison = Double.compare(e1.getSalary(), e2.getSalary());
+                    if (salaryComparison == 0) {
+                        return e1.getName().compareTo(e2.getName());
+                    }
+                    return salaryComparison;
+                })
+                .toList();
+
+        empList1.forEach(i -> System.out.println(i.name + "     " + i.salary));
 
         System.out.println("---------------------------------------------------");
 
@@ -47,7 +87,7 @@ class Stream1 {
         // Question: Get a list of salaries in descending order
         List<Integer> sortedSalaries = al.stream()
                 .map(emp -> emp.salary)
-                .sorted(Comparator.reverseOrder())
+                .sorted((i, j) -> j - i)
                 .toList();
 
         sortedSalaries.forEach(System.out::println);

@@ -1,8 +1,6 @@
 package org.example.java8practicequestions;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Student {
@@ -32,6 +30,19 @@ class Student {
         return rollNumber;  // Getter for rollNumber
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return rollNumber == student.rollNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(rollNumber);
+    }
+
     // toString method for easy printing
     @Override
     public String toString() {
@@ -48,24 +59,23 @@ public class AccentureInterview {
     public static void main(String[] args) {
         // Sample list of students
         List<Student> students = Arrays.asList(
-                new Student("Alice", "Smith", 1, 101),
-                new Student("Bob", "Johnson", 2, 102),
-                new Student("Alex", "Williams", 1, 103),
+                new Student("Alice", "Smith", 4, 101),
+                new Student("Aob", "Johnson", 4, 102),
+                new Student("Alex", "Williams", 3, 103),
+                new Student("Alex", "Williams", 5, 103),
+                new Student("Alex", "Williams", 6, 103),
+                new Student("Alex", "Williams", 7, 103),
+                new Student("Alex", "Williams", 2, 103),
                 new Student("Aaron", "Brown", 3, 104),
                 new Student("John", "Davis", 2, 105),
-                new Student("Anna", "Garcia", 3, 106)
+                new Student("Anna", "Garcia", 1, 106)
         );
 
 
-        // Filtering students whose first name starts with "A" and grouping them by department ID using lambda expressions
+        // Filtering students whose first name starts with "A" and grouping them by department ID using method references
         Map<Integer, List<Student>> groupedStudents1 = students.stream()
                 .filter(student -> student.getFirstName().startsWith("A"))
-                .collect(Collectors.groupingBy(Student::getDeptId));
-
-        // Filtering students whose first name starts with "A" and grouping them by department ID using method references
-        Map<Integer, List<Student>> groupedStudents2 = students.stream()
-                .filter(student -> student.getFirstName().startsWith("A"))
-                .collect(Collectors.groupingBy(Student::getDeptId));
+                .collect(Collectors.groupingBy(Student::getDeptId, LinkedHashMap::new, Collectors.toList()));
 
         // Printing the grouped students without using method references
         groupedStudents1.forEach((deptId, studentList) -> {
@@ -73,11 +83,6 @@ public class AccentureInterview {
             studentList.forEach(System.out::println);
         });
 
-        // Printing the grouped students using method references
-        groupedStudents2.forEach((deptId, studentList) -> {
-            System.out.println("Department ID: " + deptId);
-            studentList.forEach(System.out::println);
-        });
 
     }
 }

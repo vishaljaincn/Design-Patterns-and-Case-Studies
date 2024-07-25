@@ -10,7 +10,9 @@ public class CountStringswhoselengthisgreaterthan3inList {
         List<String> list = Arrays.asList("hi", "hello", "mofo", "lol", "vishal", "jain");
 
 //		To count the no of strings whose length is greater than 3 
-        long count = list.stream().filter(str -> str.length() > 3).count();
+        long count = list.stream()
+                .filter(str -> str.length() > 3)
+                .count();
         System.out.println("the count of strings whose length is greter than 3 is " + count);
 
 //		To print the strings whose length is greater than 3
