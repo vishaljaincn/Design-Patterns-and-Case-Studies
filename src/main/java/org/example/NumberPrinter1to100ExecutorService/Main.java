@@ -1,10 +1,11 @@
 package org.example.NumberPrinter1to100ExecutorService;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
         for (int i = 1; i <= 100; i++) {

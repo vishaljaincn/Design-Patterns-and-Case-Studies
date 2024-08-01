@@ -71,6 +71,8 @@ public class AccentureInterview {
                 new Student("Anna", "Garcia", 1, 106)
         );
 
+        Student studentss=new Student("Alice", "Smith", 4, 101);
+        studentss.getClass();
 
         // Filtering students whose first name starts with "A" and grouping them by department ID using method references
         Map<Integer, List<Student>> groupedStudents1 = students.stream()
