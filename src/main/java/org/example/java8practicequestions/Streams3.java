@@ -28,6 +28,19 @@ class Book {
         return rating;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return rating == book.rating;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(rating);
+    }
+
     Book(String bookName, String author, int bookId, int rating) {
         this.bookName = bookName;
         this.author = author;
@@ -35,17 +48,7 @@ class Book {
         this.rating = rating;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Book book = (Book) obj;
-        // System.out.println(book.getRating() +" "+this.getRating());
-        return book.getRating() == this.getRating();
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(rating);
-    }
 }
 
 public class Streams3 {
