@@ -52,7 +52,7 @@ public class NumberSum {
         // Q7: How can you find duplicates in a list using Java Streams?
         Set<Integer> set = new HashSet<>();
         numbersWithDuplicates.stream()
-                .filter(i -> !set.add(i))
+                .filter(i -> set.add(i))
                 .forEach(System.out::print);
         System.out.println("--------------------------------------------------------------------------");
 
