@@ -1,9 +1,6 @@
 package org.example.java8practicequestions;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 class Book {
 
@@ -75,7 +72,7 @@ public class Streams3 {
 
         // Q1: How do you filter a list of books to get unique ratings using HashSet in Java Streams?
         HashSet<Integer> uniqueRatings = new HashSet<>();
-
+        LinkedList<Integer>l=new LinkedList<>();
         List<Book> uniqueBooks = bookList.stream()
                 .filter(book -> uniqueRatings.add(book.getRating()))
                 .toList();

@@ -56,6 +56,13 @@ class Stream1 {
                 .sorted(Comparator.comparing(Employee12::getSalary).thenComparing(Employee12::getName))
                 .toList();
 
+// Sort employees by salary in descending order, and by name in descending order if salaries are equal
+        List<Employee12> empListDesc = al.stream()
+                .sorted(Comparator.comparing(Employee12::getSalary).reversed()
+                        .thenComparing(Comparator.comparing(Employee12::getName).reversed()))
+                .toList();
+
+
         empList.forEach(i -> System.out.println(i.name + "     " + i.salary));
 
         // Question: Sort the employees first by salary and then by name if salaries are equal without

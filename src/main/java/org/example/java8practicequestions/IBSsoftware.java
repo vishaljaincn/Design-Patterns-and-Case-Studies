@@ -23,9 +23,7 @@ class IBSSoftware {
     public String getDepartment() {
         return department;
     }
-}
 
-public class IBSsoftware {
     public static void main(String[] args) {
         List<IBSSoftware> employees = Arrays.asList(
                 new IBSSoftware("John", "HR"),
@@ -35,6 +33,7 @@ public class IBSsoftware {
                 new IBSSoftware("Steve", "Engineering"),
                 new IBSSoftware("Jessica", "Finance")
         );
+
 
         // Finding the department with the maximum number of employees
         String departmentWithMaxEmployees = employees.stream()
