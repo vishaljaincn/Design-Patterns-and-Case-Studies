@@ -1,6 +1,8 @@
 package org.example.ProducerConsumerSemaphore;
 
 import java.util.Queue;
+import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Semaphore;
 
@@ -26,6 +28,7 @@ public class Main {
         Producer p4 = new Producer(queue, maxSize, "P4", producerSemaphore, consumerSemaphore);
         Thread t4 = new Thread(p4);
         t4.start();
+        
 
         Producer p5 = new Producer(queue, maxSize, "P5", producerSemaphore, consumerSemaphore);
         Thread t5 = new Thread(p5);

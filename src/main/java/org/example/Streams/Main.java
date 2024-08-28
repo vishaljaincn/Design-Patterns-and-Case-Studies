@@ -97,5 +97,12 @@ public class Main {
         }
 
         System.out.println(i.get());
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("page", 1);
+        map.put("size", 10);
+        map.put("sort", set1);
+        map.put("order", numbersLessThan10);
+        map.put("search", "%");
+        System.out.println(map);
     }
 }
