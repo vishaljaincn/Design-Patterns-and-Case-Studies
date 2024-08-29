@@ -36,7 +36,7 @@ public class FlatMap {
                 .collect(Collectors.groupingBy(i -> i, LinkedHashMap::new, Collectors.counting()))
                 .entrySet()
                 .stream()
-                .max((i, i1) -> i.getValue().compareTo(i1.getValue()))
+                .max(Comparator.comparing(Entry::getValue))
                 .get();
 
         System.out.println("The most frequent word and its count: " + h1);

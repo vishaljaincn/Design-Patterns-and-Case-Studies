@@ -1,10 +1,10 @@
 package org.example.java8practicequestions;
 
 import lombok.Getter;
-import org.example.Inheritence2.A;
 
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -55,7 +55,6 @@ public class Streams2 {
                         Employee123::getGender,
                         Collectors.averagingInt(Employee123::getAge)));
 
-        CopyOnWriteArrayList<Integer> a=new CopyOnWriteArrayList<>();
         averageAges.forEach((gender, avgAge) ->
                 System.out.println("Gender: " + gender + " | Average Age: " + avgAge));
 
