@@ -86,6 +86,21 @@ public class AccentureInterview {
             studentList.forEach(System.out::println);
         });
 
+        // Question: Find the third largest element in a list of integers.
+
+        // Creating a list of integers
+        List<Integer> list = Arrays.asList(10, 5, 4, 3, 17, 58, 97, 43);
+
+        // Using stream to sort the list in descending order
+        // Skip the first two elements and then find the first element (which will be the third largest)
+        Integer ans = list.stream()
+                .sorted((i, j) -> j - i)  // Sorting in descending order
+                .skip(2)                  // Skipping the first two largest elements
+                .findFirst()              // Getting the third largest element
+                .get();                   // Extracting the value
+
+        // Print the third largest element
+        System.out.println(ans); // Output will be 43
 
     }
 }
