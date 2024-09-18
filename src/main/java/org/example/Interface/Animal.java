@@ -8,4 +8,8 @@ public interface Animal {
     void walk();
 
     void run();
+
+    default String hi() {
+        return "hi";
+    }
 }
