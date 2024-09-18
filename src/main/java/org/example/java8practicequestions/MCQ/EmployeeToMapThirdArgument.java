@@ -7,58 +7,16 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class EmployeeToMapThirdArgument {
-    private int rollNo;
-    private String name;
-    private String address;
-    private int age;
+    private final int rollNo;
+    private final String name;
+    private final String address;
+    private final int age;
 
     public EmployeeToMapThirdArgument(int rollNo, String name, String address, int age) {
         this.rollNo = rollNo;
         this.name = name;
         this.address = address;
         this.age = age;
-    }
-
-    public int getRollNo() {
-        return rollNo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public String toString() {
-        return "EmployeeToMapThirdArgument{" +
-                "rollNo=" + rollNo +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EmployeeToMapThirdArgument employee = (EmployeeToMapThirdArgument) o;
-        return rollNo == employee.rollNo &&
-                age == employee.age &&
-                Objects.equals(name, employee.name) &&
-                Objects.equals(address, employee.address);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(rollNo, name, address, age);
     }
 
     public static void main(String[] args) {
@@ -127,5 +85,47 @@ public class EmployeeToMapThirdArgument {
                         Integer::sum) // merge ages on duplicates with method references
                 );
         System.out.println("Merge Ages on Duplicates: " + nameToMergedAgeMaps);
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeToMapThirdArgument{" +
+                "rollNo=" + rollNo +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EmployeeToMapThirdArgument employee = (EmployeeToMapThirdArgument) o;
+        return rollNo == employee.rollNo &&
+                age == employee.age &&
+                Objects.equals(name, employee.name) &&
+                Objects.equals(address, employee.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rollNo, name, address, age);
     }
 }

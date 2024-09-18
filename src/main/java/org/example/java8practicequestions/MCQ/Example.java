@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class Example {
     // Instance variables
-    private Map<String, Integer> map = new HashMap<>(); // HashMap to store key-value pairs
-    private String text = "Original"; // Immutable String object initialized with "Original"
-    private String text1 = new String("Original"); // Immutable String object created using the 'new' keyword
-    private StringBuilder stringBuilder = new StringBuilder("Vishal"); // Mutable StringBuilder object
+    private final Map<String, Integer> map = new HashMap<>(); // HashMap to store key-value pairs
+    private final String text = "Original"; // Immutable String object initialized with "Original"
+    private final String text1 = "Original"; // Immutable String object created using the 'new' keyword
+    private final StringBuilder stringBuilder = new StringBuilder("Vishal"); // Mutable StringBuilder object
 
     public static void main(String[] args) {
         // Creating an instance of Example class
