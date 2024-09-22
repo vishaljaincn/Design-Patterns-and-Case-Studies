@@ -2,7 +2,7 @@ package org.example.java8practicequestions;
 
 import java.util.*;
 
-public class StreamExample {
+public class StreamExampleChatGPT {
 
     // Method to find the second largest number in a list of integers using streams
     public static Optional<Integer> findSecondLargest(List<Integer> numbers) {

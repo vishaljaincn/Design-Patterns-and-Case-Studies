@@ -34,7 +34,6 @@ class IBSSoftware {
                 new IBSSoftware("Jessica", "Finance")
         );
 
-
         // Finding the department with the maximum number of employees
         String departmentWithMaxEmployees = employees.stream()
                 .collect(Collectors.groupingBy(IBSSoftware::getDepartment, Collectors.counting()))
