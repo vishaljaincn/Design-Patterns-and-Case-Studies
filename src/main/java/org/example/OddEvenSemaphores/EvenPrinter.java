@@ -20,10 +20,11 @@ public class EvenPrinter implements Runnable {
             while (count.value <= MAX) {
                 evenSemaphore.acquire(); // Acquire the even semaphore
                 if (count.value <= MAX && count.value % 2 == 0) {
-                    System.out.println(Thread.currentThread().getName()+" (Even): " + count.value);
+                    System.out.println(Thread.currentThread().getName() + " (Even): " + count.value);
                     count.value++;
+                    oddSemaphore.release(); // Release the odd semaphore
                 }
-                oddSemaphore.release(); // Release the odd semaphore
+
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

@@ -22,8 +22,9 @@ public class OddPrinter implements Runnable {
                 if (count.value < MAX && count.value % 2 != 0) {
                     System.out.println(Thread.currentThread().getName() + " (Odd): " + count.value);
                     count.value++;
+                    evenSemaphore.release(); // Release the even semaphore
                 }
-                evenSemaphore.release(); // Release the even semaphore
+
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

@@ -23,6 +23,7 @@ public class CompletableFutureExample {
             return result.replace(" ", "-");
         }, executor);
 
+        future.complete("nigga");
         // Get the final result (this will block until the result is available)
         String finalResult = future.get();
         System.out.println("Final Result: " + finalResult);  // Output: HELLO-WORLD

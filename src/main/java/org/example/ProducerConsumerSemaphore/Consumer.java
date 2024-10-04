@@ -22,16 +22,16 @@ public class Consumer implements Runnable {
     @Override
     public void run() {
         while (true) {
-//            if (queue.size() > 0){
-            try {
-                consumerSemaphore.acquire();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            if (!queue.isEmpty()) {
+                try {
+                    consumerSemaphore.acquire();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println(name + "is consuming an element & size is " + queue.size());
+                queue.remove();
+                producerSemaphore.release();
             }
-            System.out.println(name + "is consuming an element & size is " + queue.size());
-            queue.remove();
-            producerSemaphore.release();
-//            }
         }
     }
 }

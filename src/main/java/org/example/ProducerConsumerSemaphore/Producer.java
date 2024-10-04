@@ -22,7 +22,7 @@ public class Producer implements Runnable {
     @Override
     public void run() {
         while (true) {
-//            if (queue.size() < maxSize) {
+            if (queue.size() < maxSize) {
             try {
                 producerSemaphore.acquire(); // ps--
             } catch (InterruptedException e) {
@@ -31,7 +31,7 @@ public class Producer implements Runnable {
             System.out.println(name + "is producing an element & size is " + queue.size());
             queue.add(new Object());
             consumerSemaphore.release(); // cs++
-//            }
+           }
         }
     }
 }
