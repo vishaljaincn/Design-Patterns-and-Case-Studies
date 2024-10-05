@@ -8,6 +8,20 @@ class Employee12 {
 
 
     public String name;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Employee12 that = (Employee12) o;
+        return id == that.id && salary == that.salary && Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, salary);
+    }
+
     public int salary;
 
     public String getName() {

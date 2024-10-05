@@ -33,17 +33,17 @@ class Employee {
 
 public class EmployeeDetails {
     public static void main(String[] args) {
-        List<Employee> employees = Arrays.asList(
-                new Employee("John", 70000),
-                new Employee("Alice", 80000),
-                new Employee("Bob", 75000),
-                new Employee("David", 60000),
-                new Employee("Carol", 90000)
+        List<Employeev> employees = Arrays.asList(
+                new Employeev("John", 70000),
+                new Employeev("Alice", 80000),
+                new Employeev("Bob", 75000),
+                new Employeev("David", 60000),
+                new Employeev("Carol", 90000)
         );
 
-        Map<Employee,Integer>d=new HashMap<>();
+        Map<Employeev,Integer>d=new HashMap<>();
         // 1. Sort employees based on their salaries in descending order
-        List<Employee> sortedEmployees = employees.stream()
+        List<Employeev> sortedEmployees = employees.stream()
                 .sorted((e1, e2) -> Double.compare(e2.getSalary(), e1.getSalary()))
                 .toList();
 
@@ -51,7 +51,7 @@ public class EmployeeDetails {
         sortedEmployees.forEach(System.out::println);
 
         // 2. Fetch top 3 salaried employees' details
-        List<Employee> top3SalariedEmployees = sortedEmployees.stream()
+        List<Employeev> top3SalariedEmployees = sortedEmployees.stream()
                 .limit(3)
                 .toList();
 
@@ -61,7 +61,7 @@ public class EmployeeDetails {
         // 3. Fetch all employees having salary less than the 3rd highest salary
         double thirdHighestSalary = sortedEmployees.get(2).getSalary();
 
-        List<Employee> employeesLessThanThirdHighest = employees.stream()
+        List<Employeev> employeesLessThanThirdHighest = employees.stream()
                 .filter(employee -> employee.getSalary() < thirdHighestSalary)
                 .toList();
 
