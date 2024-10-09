@@ -6,7 +6,7 @@ import java.util.TreeSet;
 String str1 = "bbbaaadddcccfffeee";
 a b c d e f
  */
-public class SortCharacter {
+public class SortCharacter_Accolite {
     public static void main(String[] args) {
         String str1 = "bbbaaadddcccfffeee";
 
