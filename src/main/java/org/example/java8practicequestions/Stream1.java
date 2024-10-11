@@ -48,6 +48,15 @@ class Employee12 {
         this.salary = salary;
     }
 
+    @Override
+    public String toString() {
+        return "Employee12{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
     public Employee12(int a, String b, int c) {
         this.id = a;
         this.name = b;
@@ -63,10 +72,9 @@ class Stream1 {
         al.add(new Employee12(1, "Shreyas", 40000));
         al.add(new Employee12(1, "Vishal", 20000));
         al.add(new Employee12(1, "Gautam", 20000));
-        System.out.println("Hello, World!");
 
         // Question: Sort the employees first by salary and then by name if salaries are equal
-        List<Employee12> empList = al.stream()
+        List<Employee12> empList = al.stream().peek(System.out::println)
                 .sorted(Comparator.comparing(Employee12::getSalary).thenComparing(Employee12::getName))
                 .toList();
 
