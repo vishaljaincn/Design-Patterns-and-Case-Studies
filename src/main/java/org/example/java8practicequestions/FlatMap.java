@@ -48,7 +48,7 @@ public class FlatMap {
                 .entrySet()
                 .stream()
                 .filter(i -> i.getValue() > 1)
-                .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         h.forEach((key, value) -> System.out.println("Word: " + key + ", Count: " + value));
     }
