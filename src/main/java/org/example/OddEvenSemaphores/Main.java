@@ -3,7 +3,7 @@ package org.example.OddEvenSemaphores;
 import java.util.concurrent.Semaphore;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Count count = new Count();
         Semaphore oddSemaphore = new Semaphore(1); // Initially allow the odd thread to run
         Semaphore evenSemaphore = new Semaphore(0); // Initially block the even thread
@@ -13,7 +13,7 @@ public class Main {
 
         Thread t1 = new Thread(oddPrinter);
         Thread t2 = new Thread(evenPrinter);
-
+        t1.wait();
         t1.start();
         t2.start();
     }
