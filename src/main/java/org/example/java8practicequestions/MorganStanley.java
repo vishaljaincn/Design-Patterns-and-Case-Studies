@@ -47,7 +47,7 @@ public class MorganStanley {
                         // Append the character 'value' times to the StringBuilder
                         result.append(String.valueOf(i.getKey()).repeat(i.getValue()))
                 );
-
+        frequencyMap.entrySet().stream().filter(i -> i.getValue() % 2 == 0).findAny();
         // Print the constructed result string with characters sorted by frequency
         System.out.println(result);
         System.out.println("///////");
