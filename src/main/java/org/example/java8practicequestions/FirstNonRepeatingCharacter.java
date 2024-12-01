@@ -1,29 +1,30 @@
 package org.example.java8practicequestions;
 
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class FirstNonRepeatingCharacter {
     public static void main(String[] args) {
-        // Input string
-        String s = "racecars";
-        System.out.println(s);
+        String s = "rarcrxecas";
+        System.out.println("Input: " + s);
 
-        // LinkedHashSet to store characters while maintaining insertion order
-        LinkedHashSet<Character> set = new LinkedHashSet<>();
+        // LinkedHashMap to store characters and their counts
+        LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
 
-        // Iterate over each character in the string
+        // Iterate over each character and count occurrences
         for (char c : s.toCharArray()) {
-            // If the character already exists in the set, it means it's repeating
-            if (set.contains(c)) {
-                set.remove(c); // Remove the character from the set (no longer non-repeating)
-            } else {
-                set.add(c); // Add the character to the set (seen for the first time)
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        // Find the first character with a count of 1
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 1) {
+                System.out.println("First non-repeating character: " + entry.getKey());
+                return;
             }
         }
-        System.out.println(set.getFirst());
-        // Retrieve and print the first character from the set (non-repeating)
-        // LinkedHashSet preserves the order of insertion, so the first element is the first non-repeating character
-        System.out.println(set.iterator().hasNext() ? set.iterator().next() : '-');
-        // If the set is empty, print '-' to indicate no non-repeating character
+
+        // If no non-repeating character is found
+        System.out.println("First non-repeating character: -");
     }
 }
