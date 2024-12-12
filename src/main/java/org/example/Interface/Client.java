@@ -12,5 +12,6 @@ public class Client {
         Animal animal = new Dog();
         animal.eat();
         animal.walk();
+        System.out.println(animal instanceof Dog);
     }
 }

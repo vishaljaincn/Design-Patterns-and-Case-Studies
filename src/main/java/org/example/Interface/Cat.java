@@ -15,4 +15,7 @@ public class Cat implements Animal {
     public void run() {
         System.out.println("Cat is running");
     }
+    public void doSomething(){
+        System.out.println("Cat is doing something");
+    }
 }
