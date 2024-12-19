@@ -1,4 +1,4 @@
-package org.example.LLDChainResponsibilityDesignPattern;
+package org.example.designpatterns.ChainResponsibilityDesignPattern;
 
 public class Main {
 
@@ -9,6 +9,10 @@ public class Main {
         logObject.log(LogProcessor.ERROR, "exception happens");
         logObject.log(LogProcessor.DEBUG, "need to debug this ");
         logObject.log(LogProcessor.INFO, "just for info ");
+        String s = "vishal";
+
+
+
 
     }
 }

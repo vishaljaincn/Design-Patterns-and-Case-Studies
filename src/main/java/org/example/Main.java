@@ -19,7 +19,7 @@ public class Main {
             Thread.sleep(110);
         } catch (Exception e) {
         }
-        threadLocalObj.set("bastardkkkk");
+       // threadLocalObj.set("bastardkkkk");
         //here we have main thread
         System.out.println(threadLocalObj.get());
     }

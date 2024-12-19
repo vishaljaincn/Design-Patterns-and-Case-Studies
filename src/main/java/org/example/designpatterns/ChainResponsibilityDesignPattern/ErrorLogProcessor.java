@@ -1,4 +1,4 @@
-package org.example.LLDChainResponsibilityDesignPattern;
+package org.example.designpatterns.ChainResponsibilityDesignPattern;
 
 public class ErrorLogProcessor extends LogProcessor{
 
