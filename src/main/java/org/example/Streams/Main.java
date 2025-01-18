@@ -105,4 +105,19 @@ public class Main {
         map.put("search", "%");
         System.out.println(map);
     }
+
+    public void print(int i) {
+        System.out.println(i);
+        List<Integer> l1 = List.of(
+                1, 2, 3, 4
+        );
+        l1.stream().sorted(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return 0;
+            }
+        });
+      
+    }
+
 }

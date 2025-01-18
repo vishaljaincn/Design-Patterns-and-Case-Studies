@@ -1,6 +1,9 @@
 package org.example.Strings;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class StringDemo {
     int variable = 10;
@@ -40,9 +43,13 @@ public class StringDemo {
 //        String s2 = new String("aardvark");
 //        // System.out.println(ws1.hashCode() == ws2.hashCode());
 //        System.out.println(s1.hashCode() == s2.hashCode());
-        int[][] x = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int q = Arrays.stream(x)
-                .map(a -> a[0]).reduce(0, (a, b) -> a + b);
-        System.out.println(q);
+//        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+//        System.out.println(list);
+//        list.clear();
+//        System.out.println(list);
+//        System.out.println(list.size());
+//        Queue queue=new LinkedList();
+
+
     }
 }

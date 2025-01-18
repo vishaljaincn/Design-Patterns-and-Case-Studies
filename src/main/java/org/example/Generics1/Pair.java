@@ -10,6 +10,7 @@ public class Pair<V, S> {
 
     public void setFirst(V first) {
         this.first = first;
+        V[] vs = (V[]) new Object[10];
     }
 
     public S getSecond() {
