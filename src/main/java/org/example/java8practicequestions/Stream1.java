@@ -79,7 +79,11 @@ class Stream1 {
                 .toList();
 
 // Sort employees by salary in descending order, and by name in descending order if salaries are equal
-        List<Employee12> empListDesc = al.stream()
+        List<Employee12> empListDesc = al.stream().peek((a) -> {
+                    if (a.getSalary() > 8000) {
+                        System.out.println("the first employee to cross 8000 is: " + a.getName());
+                    }
+                })
                 .sorted(Comparator.comparing(Employee12::getSalary).reversed()
                         .thenComparing(Comparator.comparing(Employee12::getName).reversed()))
                 .toList();

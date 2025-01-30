@@ -1,11 +1,8 @@
 package org.example.java8practicequestions;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-class Employee {
+class Employee implements Cloneable{
     private String name;
     private double salary;
 
@@ -13,6 +10,7 @@ class Employee {
         this.name = name;
         this.salary = salary;
     }
+
 
     public String getName() {
         return name;
@@ -29,6 +27,10 @@ class Employee {
                 ", salary=" + salary +
                 '}';
     }
+//    @Override
+//    public Object clone()throws CloneNotSupportedException{
+//        return super.clone();
+//    }
 }
 
 public class EmployeeDetails {

@@ -1,6 +1,7 @@
 package org.example.OddEvenSemaphores;
 
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Condition;
 
 public class OddPrinter implements Runnable {
     private final Count count;

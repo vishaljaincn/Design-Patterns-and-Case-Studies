@@ -3,6 +3,8 @@ package org.example.java8practicequestions;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Collections.singletonList;
+
 class Student {
     private String firstName;
     private String lastName;
@@ -101,6 +103,8 @@ public class AccentureInterview {
 
         // Print the third largest element
         System.out.println(ans); // Output will be 43
+
+        List<String> list8 = singletonList("Alice");
 
     }
 }
