@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
  */
 public class MyOptional<T> {
 
-    // The actual value stored, can be null if empty
+    // The actual value stored, can be null if empty7
     private final T value;
 
     /**
@@ -103,6 +103,7 @@ public class MyOptional<T> {
     public static void main(String[] args) {
         MyOptional<String> name = MyOptional.ofNullable(null);
         MyOptional<String> name2 = new MyOptional<>("John Doe");
+        MyOptional<String> myOptional = MyOptional.of("Jane kumar");
         name2.get();
 
         System.out.println(name.isPresent() ? "Name is present" : "Name is not present");
