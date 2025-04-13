@@ -1,6 +1,8 @@
 package org.example.Inheritence2;
 
 
+import static org.example.Inheritence2.A.display;
+
 public class Main {
     public static void main(String[] args) {
         A a = new C();
@@ -13,5 +15,6 @@ public class Main {
         //Compiler doesn't know about what type of object we are going to store in the variable,
         //as the object creation happens at Run Time.
         System.out.println("DEBUG");
+        display();
     }
 }

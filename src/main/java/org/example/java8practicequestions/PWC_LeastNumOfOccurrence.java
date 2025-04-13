@@ -1,6 +1,7 @@
 package org.example.java8practicequestions;
 
 import java.util.HashMap;
+import java.util.function.Predicate;
 
 public class PWC_LeastNumOfOccurrence {
     public static void main(String[] args) {
@@ -47,5 +48,6 @@ public class PWC_LeastNumOfOccurrence {
 
         // Print the resulting HashMap which contains the minimum consecutive occurrences of each character
         System.out.println(map);
+
     }
 }
