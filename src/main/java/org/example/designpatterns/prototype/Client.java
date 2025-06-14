@@ -44,7 +44,9 @@ public class Client {
         parag.setPsp(80.0);
 
         // Retrieve and customize a clone of the IntelligentStudent prototype
-        Student koteshwara = registry.get("mar22MorningIntelligentStudent").clone();
+
+        IntelligentStudent koteshwara = (IntelligentStudent) registry.get("mar22MorningIntelligentStudent").clone();
+        System.out.println("koteshwara.getIq() = " + koteshwara.getIq());
 
         // This is a placeholder for further operations or checks
         System.out.println("DEBUG");

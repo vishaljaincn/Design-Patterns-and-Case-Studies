@@ -11,4 +11,7 @@ public class User {
         System.out.println("User is logging in");
 
     }
+    public void logout() {
+        System.out.println("User is logging out");
+    }
 }

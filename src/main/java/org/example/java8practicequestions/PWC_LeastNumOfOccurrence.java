@@ -36,5 +36,6 @@ public class PWC_LeastNumOfOccurrence {
 
         // Print the resulting HashMap which contains the minimum consecutive occurrences of each character
         System.out.println(map);
+
     }
 }

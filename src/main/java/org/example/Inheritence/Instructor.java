@@ -11,5 +11,6 @@ public class Instructor extends User {
         System.out.println("Instructor is logging in");
         int[] a = new int[5];
         User.x = 10;
+        login();
     }
 }

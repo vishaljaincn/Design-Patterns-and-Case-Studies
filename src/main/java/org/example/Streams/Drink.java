@@ -22,6 +22,12 @@ public class Drink implements Comparable {
         Drink two = new Drink();
         one.name = "Coffee";
         two.name = "Tea";
+        int i=0;
+        while( i > 0 && i < 5) {
+            i++;
+            System.out.println("Hello");
+        }
+
 
         TreeSet set = new TreeSet();
         set.add(one);
