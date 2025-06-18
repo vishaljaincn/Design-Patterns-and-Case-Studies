@@ -6,12 +6,12 @@ import java.util.Queue;
 public class ProducerConsumerLearning {
 
     public static void main(String[] args) {
-        SharedResource sharedBuffer = new SharedResource(6);
+        SharedResource sharedBuffer = new SharedResource(10);
 
         // Creating producer thread using Lambda expression
         Thread producerThread = new Thread(() -> {
             try {
-                for (int i = 1; i <= 6; i++) {
+                for (int i = 1; i <= 20; i++) {
                     sharedBuffer.produce(i);
                 }
             } catch (Exception e) {
@@ -23,7 +23,7 @@ public class ProducerConsumerLearning {
         // Creating consumer thread using Lambda expression
         Thread consumerThread = new Thread(() -> {
             try {
-                for (int i = 1; i <= 6; i++) {
+                for (int i = 1; i <= 20; i++) {
                     sharedBuffer.consume();
                 }
             } catch (Exception e) {
@@ -56,7 +56,9 @@ class SharedResource {
         sharedBuffer.add(item);
         System.out.println("Produced: " + item);
 
-        // Notify the consumer that there are items to consume now
+        // Add small delay to allow consumer thread to get scheduled
+        Thread.sleep(100);
+
         notify();
     }
 
@@ -70,9 +72,10 @@ class SharedResource {
         int item = sharedBuffer.poll();
         System.out.println("Consumed: " + item);
 
-        // Notify the producer that there is space in the buffer now
-        notify();
+        // Add small delay to allow producer thread to get scheduled
+        Thread.sleep(150);
 
+        notify();
         return item;
     }
 }

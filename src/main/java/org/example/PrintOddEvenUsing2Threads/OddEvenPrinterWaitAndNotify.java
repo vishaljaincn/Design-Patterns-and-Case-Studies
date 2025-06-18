@@ -51,14 +51,14 @@ public class OddEvenPrinterWaitAndNotify {
     public void printOddNumbers() {
         synchronized (count) {
             while (count.value < MAX) {
-                while (count.value % 2 == 0) {
+                if (count.value % 2 == 0) {
                     try {
                         count.wait();
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }
                 }
-                System.out.println("Thread 1: " + count.value);
+                System.out.println(Thread.currentThread().getName() + " (Odd): " + count.value);
                 count.value++;
                 count.notify();
             }
@@ -68,14 +68,14 @@ public class OddEvenPrinterWaitAndNotify {
     public void printEvenNumbers() {
         synchronized (count) {
             while (count.value <= MAX) {
-                while (count.value % 2 != 0) {
+                if (count.value % 2 != 0) {
                     try {
                         count.wait();
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }
                 }
-                System.out.println("Thread 2: " + count.value);
+                System.out.println(Thread.currentThread().getName()+ "(Even): " + count.value);
                 count.value++;
                 count.notify();
             }
