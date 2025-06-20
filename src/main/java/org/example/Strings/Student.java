@@ -4,10 +4,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Student {
-    int id;
-    String name;
-    int age;
-    String adderess;
+    private int id;
+    private String name;
+    private int age;
+    private String adderess;
 
     public Student(int id, String name, int age, String adderess) {
         this.id = id;
@@ -46,9 +46,23 @@ public class Student {
     public String getAdderess() {
         return adderess;
     }
-
+    public void print()
+    {
+        System.out.println(id);
+        System.out.println(age);
+    }
     public void setAdderess(String adderess) {
         this.adderess = adderess;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", adderess='" + adderess + '\'' +
+                '}';
     }
 
     @Override
@@ -61,6 +75,7 @@ public class Student {
 
     @Override
     public int hashCode() {
+        super.hashCode();
         return Objects.hash(id, name, age, adderess);
     }
 }
