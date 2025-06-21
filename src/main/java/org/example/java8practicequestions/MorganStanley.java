@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MorganStanley {
     public static void main(String[] args) {
@@ -47,7 +48,6 @@ public class MorganStanley {
                         // Append the character 'value' times to the StringBuilder
                         result.append(String.valueOf(i.getKey()).repeat(i.getValue()))
                 );
-        frequencyMap.entrySet().stream().filter(i -> i.getValue() % 2 == 0).findAny();
         // Print the constructed result string with characters sorted by frequency
         System.out.println(result);
         System.out.println("///////");
@@ -74,5 +74,42 @@ public class MorganStanley {
 
         // Print the final result string sorted by both frequency and lexicographical order when frequencies are tied
         System.out.println(results);
+        System.out.println("///////");
+
+        // Section 4: Use Java 8 streams to sort and generate the result string in one continuous operation
+        String result4 = frequencyMap.entrySet().stream()
+                // Sort by frequency (descending), and then lexicographically for equal frequencies
+                .sorted((e1, e2) -> {
+                    int freqComparison = e2.getValue().compareTo(e1.getValue());
+                    return freqComparison != 0 ? freqComparison : Character.compare(e1.getKey(), e2.getKey());
+                })
+                // Transform each entry into a string with the character repeated according to its frequency
+                .map(entry -> String.valueOf(entry.getKey()).repeat(entry.getValue()))
+                // Join all the strings together
+                .collect(Collectors.joining());
+
+        // Print the result of solution 4
+        System.out.println(result4);
+        System.out.println("///////");
+
+        // Section 5: Complete stream-based solution without manual HashMap creation
+        System.out.println("///////");
+        String result5 = s.chars()
+                .mapToObj(c -> (char) c)
+                // Group by character and count frequencies
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+                // Stream the entries and sort by frequency (descending) and character (ascending)
+                .entrySet().stream()
+                .sorted((e1, e2) -> {
+                    int freqComparison = e2.getValue().compareTo(e1.getValue());
+                    return freqComparison != 0 ? freqComparison : Character.compare(e1.getKey(), e2.getKey());
+                })
+                // Map each entry to the character repeated by its frequency
+                .map(entry -> String.valueOf(entry.getKey()).repeat(entry.getValue().intValue()))
+                // Join into final result
+                .collect(Collectors.joining());
+
+        System.out.println("Stream-based solution:");
+        System.out.println(result5);
     }
 }
