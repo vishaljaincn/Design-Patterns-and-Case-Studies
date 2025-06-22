@@ -82,20 +82,21 @@ public class EmployeeExample {
         list.add(employee16);
         list.add(employee17);
 
-        // Grouping employees by name and counting the occurrences of each name
+        // Grouping employees by name into lists
         Map<String, List<Employee1>> countMap = list.stream()
                 .collect(Collectors.groupingBy(Employee1::getName));
-        //System.out.println(countMap); // Output: {rahul=3, sreya=1, swetha=1, vishal=2}
-        countMap.forEach((name, count) -> System.out.println(name + " = " + count));
+        //System.out.println(countMap); // Would print map with employees grouped by name
+        countMap.forEach((name, employeesList) -> System.out.println(name + " = " + employeesList));
+
         // Creating a list of integers
         List<Integer> list2 = Arrays.asList(1, 2, 3, 4, 5, 6, 1, 2, 3, 2);
 
-        // Grouping integers by value and counting the occurrences of each integer
+        // Grouping integers by value and counting occurrences of each value
         Map<Integer, Long> numcountMap = list2.stream()
                 .collect(Collectors.groupingBy(i -> i, Collectors.counting()));
         System.out.println(numcountMap); // Output: {1=2, 2=3, 3=2, 4=1, 5=1, 6=1}
 
-        // Creating another list of integers
+        // Creating another list of integers with duplicates
         List<Integer> list3 = new ArrayList<>();
         list3.add(1);
         list3.add(2);
@@ -105,21 +106,21 @@ public class EmployeeExample {
         list3.add(3);
         list3.add(4);
 
-        // Printing the list of integers
+        // Printing the list of integers with duplicates
         System.out.println(list3); // Output: [1, 2, 1, 3, 2, 3, 4]
 
         // Converting the list to a HashSet to remove duplicates
         Set<Integer> uniqueSet = new HashSet<>(list3);
         System.out.println(uniqueSet); // Output: [1, 2, 3, 4]
 
-        // Printing the list again to show it hasn't changed
+        // Printing the original list to show it hasn't changed after creating HashSet
         System.out.println(list3); // Output: [1, 2, 1, 3, 2, 3, 4]
 
-        // Converting the list to another HashSet to remove duplicates
+        // Creating another HashSet from the same list (demonstration of same operation)
         Set<Integer> uniqueSet2 = new HashSet<>(list3);
         System.out.println(uniqueSet2); // Output: [1, 2, 3, 4]
 
-        // Creating a list of strings
+        // Creating a list of strings with duplicates
         List<String> mylist = new ArrayList<>();
         mylist.add("practice");
         mylist.add("code");
@@ -127,14 +128,14 @@ public class EmployeeExample {
         mylist.add("quiz");
         mylist.add("geeksforgeeks");
 
-        // Using Collections.frequency() method to get the frequency of the element "code"
+        // Using Collections.frequency() method to count occurrences of "code"
         int count = Collections.frequency(mylist, "code");
         System.out.println(count); // Output: 2
 
         // Explanation of the Collections.frequency() method
         // public static int frequency(Collection<?> c, Object o)
         // Parameters:
-        // c - the collection name in which to determine the frequency of o
-        // o - the object whose frequency is to be determined
+        // c - the collection in which to count occurrences of the object
+        // o - the object to count in the collection
     }
 }

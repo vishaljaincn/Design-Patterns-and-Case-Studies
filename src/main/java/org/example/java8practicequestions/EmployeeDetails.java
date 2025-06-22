@@ -1,8 +1,11 @@
 package org.example.java8practicequestions;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-class Employee implements Cloneable{
+class Employee implements Cloneable {
     private String name;
     private double salary;
 
@@ -27,10 +30,7 @@ class Employee implements Cloneable{
                 ", salary=" + salary +
                 '}';
     }
-//    @Override
-//    public Object clone()throws CloneNotSupportedException{
-//        return super.clone();
-//    }
+
 }
 
 public class EmployeeDetails {
@@ -43,7 +43,6 @@ public class EmployeeDetails {
                 new Employee("Carol", 90000)
         );
 
-        Map<Employee,Integer>d=new HashMap<>();
         // 1. Sort employees based on their salaries in descending order
         List<Employee> sortedEmployees = employees.stream()
                 .sorted((e1, e2) -> Double.compare(e2.getSalary(), e1.getSalary()))
