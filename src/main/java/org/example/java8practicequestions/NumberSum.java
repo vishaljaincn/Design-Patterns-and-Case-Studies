@@ -70,28 +70,8 @@ public class NumberSum {
                 .orElse(null);
         System.out.println("First non-repetitive character is " + firstNonRepetitive);
 
-        // Q9: How can you find the first non-repetitive character in a string?
-        String inputs = "Java Hungry Blog blog blog blog Alive is Awesome";
-
-        Character firstNonRepetitives = inputs.chars()
-                .mapToObj(s -> Character.toLowerCase((char) s))
-                .collect(Collectors.groupingBy(i -> i, LinkedHashMap::new, Collectors.counting()))
-                .entrySet()
-                .stream()
-                .filter(i -> i.getValue() == 1)
-                .map(Map.Entry::getKey)
-                .findFirst()
-                .orElse(null);
-        System.out.println("First non-repetitive character is " + firstNonRepetitives);
-
-        // Q9: What happens when you convert a string to a character array and print its length?
-        String input1 = "Java Hungry Blog blog blog blog Alive is Awesome";
-        char[] c = input.toCharArray();
-        System.out.println(c);
-        System.out.println(c.length);
-
         // Q10: How can you group characters in a string by their occurrence?
-        Map<Character, List<Character>> map = input1.chars()
+        Map<Character, List<Character>> map = input.chars()
                 .mapToObj(i -> Character.toLowerCase((char) i))
                 .collect(Collectors.groupingBy(i -> i));
         System.out.println(map);
