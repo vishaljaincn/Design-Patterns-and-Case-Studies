@@ -9,7 +9,7 @@ Avoid shifting elements when adding/removing (which would be O(n))
 Maintain constant time O(1) operations for enqueue and dequeue
 Let me explain where and why it's used:
 
-explain it with a dryrun what r u trying to say here?
+explain it with a dry run what r u trying to say here?
 
 I'll explain the circular queue concept with a step-by-step dry run of how your implementation works using the modulo (`% capacity`) operation.
 

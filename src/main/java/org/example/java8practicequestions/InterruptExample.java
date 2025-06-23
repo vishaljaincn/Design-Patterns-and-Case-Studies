@@ -19,10 +19,6 @@ public class InterruptExample {
     public static void main(String[] args) {
         MyThread t1 = new MyThread();
         t1.start();
-        Character c = 'a';
-        String s = "Hello World";
-        s.matches("[a-z0-9]+]");
-        Character.isWhitespace(c);
         try {
             Thread.sleep(2000); // Main thread waits for 2 seconds
         } catch (InterruptedException e) {

@@ -16,7 +16,7 @@ public class LTIMindtree {
         for (String word : words) {
             char[] charArray = word.toCharArray();
             reverseInPlace(charArray);
-            reversedSentence.append(new String(charArray)).append(" ");
+            reversedSentence.append(String.valueOf(charArray)).append(" ");
         }
 
         return reversedSentence.toString().trim();
