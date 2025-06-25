@@ -23,6 +23,13 @@ public class NumberSum {
         System.out.println("Sum of even numbers using reduce: " + sumOfEven.orElse(0));
         System.out.println("----------------------------------------------------------------");
 
+        // Q2: How can you find the sum of even numbers using the reduce method?
+        Integer sumOfEvent = numbers.stream()
+                .filter(num -> num % 2 == 0)
+                .reduce(0, (i, j) -> i + j);
+        System.out.println("Sum of even numbers using reduce: " + sumOfEvent);
+        System.out.println("----------------------------------------------------------------");
+
         // Q3: How can you find the sum of odd numbers in a list?
         int sumOfOdds = numbers.stream()
                 .filter(num -> num % 2 != 0)

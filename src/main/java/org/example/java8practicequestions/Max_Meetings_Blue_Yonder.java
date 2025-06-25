@@ -3,10 +3,26 @@ package org.example.java8practicequestions;
 import java.util.Arrays;
 
 /*
+Problem Statement:
 Given time intervals determine if a person could attend all meetings: Given an array of meeting time
 intervals consisting of start and end times [[s1,e1],[s2,e2],…] (si < ei), determine if a person could
 attend all meetings.
- */
+
+Solution Approach:
+1. Sort all meetings by their start time
+2. Check if any meeting starts before the previous one ends (which indicates an overlap)
+3. If any overlap is found, return false (cannot attend all meetings)
+4. If no overlaps are found, return true (can attend all meetings)
+
+Time Complexity: O(n log n) due to sorting
+Space Complexity: O(1) for in-place sort (excluding input)
+
+Example:
+Meetings: [[1,5], [6,10], [11,15], [5,9]]
+After sorting: [[1,5], [5,9], [6,10], [11,15]]
+Overlap check: Meeting [6,10] starts at 6 which is before [5,9] ends - overlap detected!
+Result: Cannot attend all meetings
+*/
 class Meeting {
     public int start;
     public int end;

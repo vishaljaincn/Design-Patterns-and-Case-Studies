@@ -10,8 +10,9 @@ public class RandomNumbers {
     public static void main(String[] args) {
         Random random = new Random();
 //		ints() method Returns unlimited stream of random int values
-        random.ints().limit(10).forEach(System.out::print);
-        random.ints().limit(10).forEach(x -> System.out.print(x));
+        random.ints().limit(10).forEach(System.out::println);
+        System.out.println("-------------------");
+        random.ints().limit(10).forEach(x -> System.out.println(x));
 
         System.out.println();
         List<Integer> list = Arrays.asList(1, 3, 9, 5, 7);

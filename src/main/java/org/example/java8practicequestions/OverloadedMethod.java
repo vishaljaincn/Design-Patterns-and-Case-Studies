@@ -2,7 +2,7 @@ package org.example.java8practicequestions;
 
 import java.util.Arrays;
 
-public class OverloadedMain {
+public class OverloadedMethod {
 
     public static void main(String[] args) {
         // Entry point of the program
