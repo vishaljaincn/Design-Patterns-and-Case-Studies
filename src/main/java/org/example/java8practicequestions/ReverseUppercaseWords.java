@@ -1,13 +1,9 @@
 package org.example.java8practicequestions;
 
-import java.util.concurrent.locks.ReentrantLock;
-
 public class ReverseUppercaseWords {
     public static void main(String[] args) {
         String input = "welcome to AUTOMATION TESTING";
         String output = reverseUppercaseWords(input);
-        ReentrantLock lock = new ReentrantLock();
-        lock.tryLock();
         System.out.println(output);  // Output: welcome to NOITAMOTUA GNITSET
     }
 
@@ -17,7 +13,7 @@ public class ReverseUppercaseWords {
 
         for (String word : words) {
             if (word.equals(word.toUpperCase())) {  // Check if word is all uppercase
-                result.append(new StringBuilder(word).reverse().toString()).append(" ");
+                result.append(new StringBuilder(word).reverse()).append(" ");
             } else {
                 result.append(word).append(" ");
             }
