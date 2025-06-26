@@ -1,16 +1,13 @@
 package org.example.CompletableFuture;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Example demonstrating CompletableFuture's asynchronous chaining capabilities
  * with custom thread pool executor.
  */
 public class CompletableFutureExample {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         // Create a thread pool with fixed number of threads
         ExecutorService executor = Executors.newFixedThreadPool(9);
 
