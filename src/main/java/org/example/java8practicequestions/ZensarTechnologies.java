@@ -34,17 +34,15 @@ public class ZensarTechnologies {
 
     public static void main(String[] args) {
 
-        // Question: Write a program to count each word from the String ArrayList in Java 8.
-
         // Sample list of strings (words)
         List<String> words = Arrays.asList("apple", "banana", "apple", "", "", "", "orange", "banana", "apple");
 
-// Q1: How would you filter out all empty strings from the given list and collect the remaining strings into a new list?
+        // Q1: How would you filter out all empty strings from the given list and collect the remaining strings into a new list?
         List<String> nonempty = words.stream().filter(s -> !s.isEmpty()).toList();
         System.out.println(nonempty);
 
-// Q2: How would you count the number of empty strings present in the given list using Java 8 Streams?
-        Long value = words.stream().filter(s -> s.isEmpty()).count();
+        // Q2: How would you count the number of empty strings present in the given list using Java 8 Streams?
+        Long value = words.stream().filter(String::isEmpty).count();
         System.out.println(value);
 
         // Using Java 8 Streams to count word occurrences
@@ -59,11 +57,12 @@ public class ZensarTechnologies {
         // Display the result
         wordCounts.forEach((word, count) -> System.out.println(word + ": " + count));
 
+        // Question: Write a code to count the frequency of each number in a list using Java 8.
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .forEach((number, count) -> System.out.println(number + ": " + count));
 
         // Question: Write a code to display the list of prime numbers using Java 8.
-
-        // List of numbers to check
-        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
         // Using Java 8 Streams to filter and print prime numbers from the list
         list.stream().filter(i -> isPrime(i)).forEach(System.out::println);
