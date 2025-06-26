@@ -149,23 +149,36 @@ class Stream1 {
         // ------------ ARRAY MERGING EXAMPLES ------------
 
         System.out.println("\n6. MERGING ARRAYS USING STREAMS:");
-        // Merge two arrays of Integer into one array
+        // Example 1: Working with boxed Integer arrays (Stream<Integer>)
         Integer[] firstArray = {10, 20, 30, 40};
         Integer[] secondArray = {50, 60, 70, 80};
 
+        // Arrays.stream(firstArray) creates a Stream<Integer> of boxed Integer objects
+        int sum = Arrays.stream(firstArray).reduce(0, Integer::sum);
+        System.out.println("Sum of first array: " + sum);
+
+        // Stream.of creates a Stream<Integer[]>, then flatMap converts it to Stream<Integer>
+        // containing all elements from both arrays
         Integer[] mergedArray = Stream.of(firstArray, secondArray)
-                .flatMap(Arrays::stream)
-                .toArray(Integer[]::new);
+                .flatMap(Arrays::stream)  // flatMap transforms Stream<Integer[]> to Stream<Integer>
+                .toArray(Integer[]::new); // Collect back to an Integer[] array
 
         System.out.println("Merged Integer Arrays: " + Arrays.toString(mergedArray));
 
-        // Merge two primitive int arrays
+        // Example 2: Working with primitive int arrays (IntStream)
         int[] firstArray1 = {10, 20, 30, 40};
         int[] secondArray1 = {50, 60, 70, 80};
 
+        // Arrays.stream(firstArray1) creates an IntStream (primitive specialized stream)
+        // which has optimized methods like .sum() that avoid boxing/unboxing
+        int sum1 = Arrays.stream(firstArray1).sum();
+        System.out.println("Sum of first array: " + sum1);
+
+        // Stream.of creates a Stream<int[]>, then flatMapToInt converts it to IntStream
+        // containing all primitive int values from both arrays
         int[] mergedIntArray = Stream.of(firstArray1, secondArray1)
-                .flatMapToInt(Arrays::stream)
-                .toArray();
+                .flatMapToInt(Arrays::stream)  // flatMapToInt transforms Stream<int[]> to IntStream
+                .toArray();  // Collect back to an int[] array (no generator needed for primitives)
 
         System.out.println("Merged int Arrays: " + Arrays.toString(mergedIntArray));
 

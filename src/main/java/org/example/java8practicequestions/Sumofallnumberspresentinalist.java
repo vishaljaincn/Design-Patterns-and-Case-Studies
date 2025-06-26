@@ -1,6 +1,5 @@
 package org.example.java8practicequestions;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,8 +11,6 @@ class Sumofallnumberspresentinalist {
         int sums = list.stream().mapToInt(i -> i).sum();
         System.out.println(sum);
         System.out.println(sums);
-//        List<String> lists = new ArrayList<String>();
-//        System.out.println(lists.get(0));
     }
 
 }
