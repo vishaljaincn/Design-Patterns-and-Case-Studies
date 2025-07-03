@@ -50,7 +50,7 @@ public class OddEvenPrinterWaitAndNotify {
 
     public void printOddNumbers() {
         synchronized (count) {
-            while (count.value < MAX) {
+            while (count.value <= MAX) {
                 if (count.value % 2 == 0) {
                     try {
                         count.wait();
@@ -75,7 +75,7 @@ public class OddEvenPrinterWaitAndNotify {
                         Thread.currentThread().interrupt();
                     }
                 }
-                System.out.println(Thread.currentThread().getName()+ "(Even): " + count.value);
+                System.out.println(Thread.currentThread().getName() + "(Even): " + count.value);
                 count.value++;
                 count.notify();
             }
