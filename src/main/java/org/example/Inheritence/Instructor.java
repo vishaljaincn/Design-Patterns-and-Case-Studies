@@ -6,6 +6,10 @@ public class Instructor extends User {
     double avgRating;
     static String role = "Instructor";
 
+    public Instructor(String userName, String password) {
+        super(userName, password);
+    }
+
     @Override
     public void login() throws RuntimeException {
         System.out.println("Instructor is logging in");

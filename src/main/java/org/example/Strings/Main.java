@@ -6,6 +6,8 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<>();
+        int a=10/0;
+        System.out.println(a);
         list.add("A");
         list.add("B");
         list.add("C");
