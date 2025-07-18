@@ -1,3 +1,5 @@
+package org.example.java8practicequestions;
+
 import java.util.Arrays;
 
 public class MaxProductFinder {
