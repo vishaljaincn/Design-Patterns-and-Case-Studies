@@ -1,9 +1,6 @@
 package org.example.java8practicequestions;
 
-import java.util.Arrays;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -178,5 +175,12 @@ public class EmployeeStats {
             System.out.println("  Max     : " + stats.getMax());
             System.out.println();
         });
+
+        List<String> ls = Arrays.asList("Berry", "Avocado", "apple", "flr", "Kiwi", "Pineapple", "Banana", "Mango", "Strawberry", "Orange", "Apple", "banana");
+        HashSet<String> set = new HashSet<>();
+        List<String> list1 = ls.stream()
+                .filter(s -> set.add(s.toLowerCase()))
+                .toList();
+        System.out.println("List with unique elements (case-insensitive): " + list1);
     }
 }
